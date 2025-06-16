@@ -125,7 +125,7 @@ const Dashboard = () => {
 
   const fetchAllSessions = async () => {
     try {
-      const response = await axiosInstance.get('/sessions/my-sessions');
+      const response = await axiosInstance.get('/sessions/my-sessions', { withCredentials: true });
       setSession(response.data);
     } catch (error) {
       console.log(error);
@@ -135,7 +135,7 @@ const Dashboard = () => {
   const fetchUsageData = async () => {
     setUsageLoading(true);
     try {
-      const response = await axiosInstance.get('/rate-limit/usage'); // You'll need to create this endpoint
+      const response = await axiosInstance.get('/rate-limit/usage', { withCredentials: true }); // You'll need to create this endpoint
       setUsageData(response.data);
     } catch (error) {
       console.log('Error fetching usage data:', error);
@@ -147,7 +147,7 @@ const Dashboard = () => {
 
   const deleteSession = async (sessionData) => {
     try {
-      await axiosInstance.delete(`/sessions/${sessionData._id}`);
+      await axiosInstance.delete(`/sessions/${sessionData._id}`, { withCredentials: true });
       toast.success('Session deleted successfully');
       fetchAllSessions();
       // Refresh usage data after deletion
