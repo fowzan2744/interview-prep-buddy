@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector';
-import Input from '../../components/Inputs/input';
+import Input from '../../components/Inputs/Input';
 import { z } from 'zod';
 import { toast } from 'react-hot-toast';
 import { useContext } from 'react';
