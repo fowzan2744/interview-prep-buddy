@@ -22,6 +22,9 @@ const ProfileInfoCard = () => {
         src={user.profileImageUrl || '/user.png'}
         alt={user.name ? `${user.name}'s profile` : "Profile picture"}
         className="w-12 h-12 bg-gray-200 rounded-full  border-2 border-pink-400 mr-3 object-cover hover:scale-500" 
+        onError={(e) => {
+        e.target.src = '/user.png';
+      }}
       />
       <div>
         <div className="text-[15px] text-black font-bold leading-3">
