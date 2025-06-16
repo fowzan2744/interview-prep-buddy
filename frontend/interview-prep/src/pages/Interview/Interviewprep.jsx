@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import DashboardLayout from '../../components/layouts/DashboardLayout';
 import RoleInfoHeader from '../roleInfoHeader';
-import QuestionCard from '../../components/cards/QuestionCard';
+import QuestionCard from '../../components/Cards/QuestionCard';
 import axiosInstance from '../../utils/axiosInstance';
 import AIResponsePreview from '../../components/AIresponsePreview';
 import Drawer from '../../components/Drawer';
