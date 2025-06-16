@@ -26,7 +26,7 @@ const QuestionCard = ({
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 group transition-all duration-300 border border-gray-200">
       <div className="flex items-start justify-between ">
-        <div className="flex flex-col gap-1 cursor-pointer w-full" onClick={toggleExpand}>
+        <div className="flex flex-col gap-1 w-full md:cursor-pointer" onClick={toggleExpand}>
           <span className="text-sm font-medium text-gray-500">Q:</span>
           <h3 className="text-lg font-semibold text-gray-800 hover:underline">
             {question}
