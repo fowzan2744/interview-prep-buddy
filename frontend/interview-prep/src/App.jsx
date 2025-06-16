@@ -8,7 +8,7 @@ import Login from "./pages/Auth/Login";
 import SignUp from "./pages/Auth/SignUp";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Home/Dashboard";
-import Interviewprep from "./pages/interview/Interviewprep";
+import Interviewprep from "./pages/Interview/Interviewprep";
 import SubscriptionManager from "./pages/Payment/PaymentInfo";
 
 import UserContextProvider from "./context/userContext";

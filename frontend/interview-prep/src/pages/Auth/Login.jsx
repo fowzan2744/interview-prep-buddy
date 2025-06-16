@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../../components/Inputs/input';
+import Input from '../../components/Inputs/Input';
 import { toast } from 'react-hot-toast';
 import { z } from 'zod';
 import axiosInstance from '../../utils/axiosInstance';
@@ -64,7 +64,7 @@ const Login = ({ setCurrentTab }) => {
     setLoading(true);
 
     try {
-      const response = await axiosInstance.post('/auth/login', { email, password });
+      const response = await axiosInstance.post('/auth/login', { email, password }, { withCredentials: true });
       const { token } = response.data;
 
       if (token) {

@@ -34,7 +34,7 @@ const SubscriptionManager = () => {
   const setFreeTier = async () => {
     try {
       setVerifying(true);
-      const response = await axiosInstance.post('/stripe/freetier');
+      const response = await axiosInstance.post('/stripe/freetier', { withCredentials: true });
       setSubscriptionInfo(response.data);
     } catch (error) {
       console.error('Failed to set free tier:', error);
@@ -54,7 +54,7 @@ const SubscriptionManager = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axiosInstance.get('/stripe/subscription-info');
+      const response = await axiosInstance.get('/stripe/subscription-info', { withCredentials: true });
       
       setSubscriptionInfo(response.data);
     } catch (error) {
@@ -81,7 +81,7 @@ const SubscriptionManager = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axiosInstance.post('/stripe/verify-payment', { sessionId, tier });
+      const response = await axiosInstance.post('/stripe/verify-payment', { sessionId, tier }, { withCredentials: true });
       
       // Payment successful, refresh subscription info
       await fetchSubscriptionInfo();
