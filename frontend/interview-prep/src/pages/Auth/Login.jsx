@@ -64,7 +64,7 @@ const Login = ({ setCurrentTab }) => {
     setLoading(true);
 
     try {
-      const response = await axiosInstance.post('/auth/login', { email, password });
+      const response = await axiosInstance.post('/auth/login', { email, password },, { withCredentials: true });
       const { token } = response.data;
 
       if (token) {
