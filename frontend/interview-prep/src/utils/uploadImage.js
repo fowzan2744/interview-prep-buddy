@@ -9,7 +9,7 @@ const uploadImage = async (img) =>
         const response = await axiosInstance.post("/auth/image-upload", formData , {
             headers: {
                 'Content-Type' : 'multipart/form-data'
-            }, { withCredentials: true }
+            }, withCredentials: true 
         });
         return response.data;
     } catch(error)
