@@ -3,8 +3,12 @@ import ProfileInfoCard from '../Cards/ProfileInfoCard';
 import { Link } from 'react-router-dom';
 import { Sparkles, Zap, Crown, ArrowRight } from 'lucide-react';
 import axiosInstance from '../../utils/axiosInstance';
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = () => {
+  
+  const navigate = useNavigate();
   const [userTier, setUserTier] = useState('free');
   const [loading, setLoading] = useState(true);
 
@@ -27,7 +31,7 @@ const Navbar = () => {
   };
 
   const handleUpgradeClick = () => {
-    window.location.href = '/upgradetier';
+    navigate('/upgradetier');
   };
 
   const getTierIcon = (tier) => {
