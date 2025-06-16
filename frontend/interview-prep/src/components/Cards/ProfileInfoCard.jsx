@@ -19,7 +19,7 @@ const ProfileInfoCard = () => {
   return (
     <div className="flex items-center mr-5 ml-5">
       <img
-        src={user.profileImageUrl}
+        src={user.profileImageUrl || '/user.png'}
         alt={user.name ? `${user.name}'s profile` : "Profile picture"}
         className="w-12 h-12 bg-gray-200 rounded-full  border-2 border-pink-400 mr-3 object-cover hover:scale-500" 
       />
