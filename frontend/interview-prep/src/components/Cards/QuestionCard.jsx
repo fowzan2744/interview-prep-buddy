@@ -33,7 +33,7 @@ const QuestionCard = ({
           </h3>
         </div>
 
-        <div className="flex cursor-pointer items-center gap-3 opacity-0 md:opacity-100 group-hover:opacity-100 transition-opacity ml-4">
+        <div className="flex cursor-pointer items-center gap-3 opacity-100 md:opacity-100 group-hover:opacity-100 transition-opacity ml-4">
           <button
             className={`transition-colors ${
               isPinned 
