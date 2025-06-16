@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const fetchUserTier = async () => {
     try {
-      const res = await axiosInstance.get('/rate-limit/usage');
+      const res = await axiosInstance.get('/rate-limit/usage', { withCredentials: true });
       if (res.status === 200 && res.data) {
         setUserTier(res.data.tier || 'free');
       }
