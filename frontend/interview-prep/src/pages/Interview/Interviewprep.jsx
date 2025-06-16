@@ -27,7 +27,7 @@ const Interviewprep = () => {
     try {
       setLoading(true);
       setError(null);  
-      const response = await axiosInstance.get(`/sessions/${sessionId}`);
+      const response = await axiosInstance.get(`/sessions/${sessionId}`, { withCredentials: true });
       setSessionData(response.data);
     } catch (error) {
       setError(error.message || 'Error fetching session details');
@@ -43,7 +43,7 @@ const Interviewprep = () => {
       setExplanationLoading(true);  
  
       try {
-        await axiosInstance.post('sessions/check-limit');
+        await axiosInstance.post('sessions/check-limit', { withCredentials: true });
       } catch (limitError) {
         if (limitError.response?.status === 429) {
           const errorData = limitError.response.data;
@@ -67,7 +67,7 @@ const Interviewprep = () => {
 
       const response = await axiosInstance.post('/ai/generate-explanation', {
         question: question,
-      });
+      }, { withCredentials: true });
       
       console.log(response.data);
       if (response.data.data) {
@@ -96,7 +96,7 @@ const Interviewprep = () => {
 
   const toggleQuestionPinStatus = async (questionId) => {
     try {
-      const response = await axiosInstance.put(`/questions/${questionId}/pin-question`);
+      const response = await axiosInstance.put(`/questions/${questionId}/pin-question`, { withCredentials: true });
       console.log(response);
 
       if (response.data && response.data.question) {
@@ -118,14 +118,14 @@ const Interviewprep = () => {
         topicsToFocus: sessionData.topicsToFocus,
         experience: sessionData.experience,
         numberOfQuestions: 10,
-      });
+      }, { withCredentials: true });
 
       const genQ = responseAI.data.data;
       console.log("Generated Questions:", genQ);
 
       const response = await axiosInstance.put(`/sessions/update/${sessionId}`, {
         questions: genQ,
-      });
+      }, { withCredentials: true });
       console.log("Session Updated:", response.data);
 
       if (response.data) {
