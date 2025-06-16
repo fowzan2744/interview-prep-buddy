@@ -8,7 +8,7 @@ const authRoutes = require('./routes/authRoute')
 const sessionRoute = require('./routes/sessionRoute')
 const questionRoutes = require('./routes/questionRoute')
 const rateLimit = require('./routes/ratelimitRoute')
-const {  checkDailyLimit,incrementDailyUsage } = require('./middlewares/rateLimitMiddleware')
+const {  checkDailyLimit,incrementDailyUsage } = require('./middlewares/ratelimitMiddleware')
 
 const { generateInterviewQuestion, generateInterviewExplanation } = require('./controller/aiController');
 
