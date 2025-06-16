@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://interview-prep-buddy-fowzan2744s-projects.vercel.app/api',
+    baseURL: 'https://interview-prep-buddy-backend.onrender.com/api',
     headers: {
         'Content-Type': 'application/json',
 
