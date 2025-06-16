@@ -61,7 +61,7 @@ const handleSignUp = async (e) => {
       email,
       password,
       profileImageUrl: uploadedImageUrl,  // use the direct URL here
-    });
+    }, { withCredentials: true });
 
     const { token } = response.data;
 
