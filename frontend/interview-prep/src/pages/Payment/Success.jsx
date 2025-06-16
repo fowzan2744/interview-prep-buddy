@@ -40,7 +40,7 @@ const PaymentSuccessHandler = () => {
         return;
       }
 
-      const response = await axiosInstance.post('/stripe/verify-payment', { sessionId, tier });
+      const response = await axiosInstance.post('/stripe/verify-payment', { sessionId, tier }, { withCredentials: true });
       const data = response.data;
        
       setDebugInfo(prev => ({
