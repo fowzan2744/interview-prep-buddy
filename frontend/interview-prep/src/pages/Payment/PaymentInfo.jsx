@@ -8,7 +8,6 @@ const PAYMENT_LINKS = {
   luxury: import.meta.env.VITE_LUXURY,
 };
 
-console.log('PAYMENT_LINKS:', PAYMENT_LINKS);
 
 
 const SubscriptionManager = () => {
